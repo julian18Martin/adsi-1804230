@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Formulario HTML</title>
+</head>
+<body>
+	<form action="" method="post">
+		<!-- Datos Personales -->
+		<fieldset>
+			<legend><h4>Datos Personales</h4></legend>
+			<label for="nombre">Nombre Completo</label>
+			<input type="text" id="name=">
+			<br>
+			<label for="genero">Genero:</label>
+			<select id="genero">
+				<option value="">Seleccione...</option>
+				<option value="">Femenino</option>
+				<option value="">Masculino</option>
+			</select>
+			<br>
+			<label for="clave">Contraseña</label>
+			<input type="password" id="clave">
+			<br>
+			<label for="descripcion">Descripcion:</label>
+			<br>
+			<textarea id="descripcion" cols="30" rows=10"></textarea>
+	</fieldset>
+	<!-- Datos Institucionales -->
+	<fieldset>
+		<legend>
+			<h4>Datos Institucionales</h4>
+		</legend>
+		Seleccione una Titulacion
+		<br>
+		<label>
+			<input type="radio" name="titulacion"> TGO Motores Disel
+		</label>
+		<br>
+		<label>
+			<input type="radio" name="titulacion"> TGO ADSI 
+		</label>
+		<br>
+		<label>
+			<input type="radio" name="titulacion"> TGO Desarrollo Grafico
+		</label>
+		<br>
+		<label>
+			<input type="radio" name="titulacion"> TGO Soldadura
+		</label>
+		<br>
+		<br>
+		Seleccione transversales favoritas:
+		<br>
+		<label><input type="checkbox">Ingles
+		</label>
+		<br>
+		<label><input type="checkbox">Martematicas
+		</label>
+		<br>
+		<label><input type="checkbox">Cultura Fisica
+		</label>
+		<br>
+		<label><input type="checkbox">Etica
+		</label>
+		<br>
+		<br>
+		<br>
+		<label for="foto"></label>
+		<input type="file" id="foto" accept="image/*">
+		<br><br>
+		<input type="submit" value="ENVIAR DATOS">
+		<input type="reset" value="LIMPIAR DATOS">
+
+
+	</fieldset>
+
+	</form>
+</body>
+</html>
