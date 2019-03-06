@@ -5,9 +5,50 @@
 	<title>Elementos de Entrada HTML5</title>
 </head>
 <body>
+	<form action="" method="post">
 	<h4>Color</h4>
 	<input type="color">
+	<!-- Fecha -->
 	<h4>Fecha</h4>
 	<input type="date">
+	<!-- Email -->
+	<h4>Email:</h4>
+	<input type="email" placeholder="email" required autofocus>
+	<!-- Month -->
+	<h4>Mes</h4>
+	<input type="Month">
+	<!-- Numero -->
+	<h4>Numero</h4>
+	<input type="number" min="18" max="90" required>
+	<!-- rango -->
+	<h4>Rango</h4>
+	<input type="range" oninput="orango.value=this.value">
+	<output id="orango"></output>
+	<!-- buscar -->
+	<h4>Buscar</h4>
+	<input type="search">
+	<!-- Tiempo -->
+	<h4>Tiempo</h4>
+	<input type="Time">
+	<!-- URL -->
+	<h4>URL</h4>
+	<input type="url">
+	<!-- Semana -->
+	<h4>Semana</h4>
+	<input type="week">
+	
+	<!-- Lista -->
+	<h4>Lista</h4>
+	<input list="lenguajes">
+	<datalist id="lenguajes">
+		<option value="Python">Python</option>
+		<option value="Ruby">Ruby</option>
+		<option value="c#">C Sharp</option>
+		<option value="php">PHP</option>
+
+	</datalist>
+	<br><br>
+	<button type="submit">Validar</button>
+	</form>
 </body>
 </html>
