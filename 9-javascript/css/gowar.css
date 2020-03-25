@@ -1,0 +1,75 @@
+main.gowar {
+	background: url(../imgs/guerra/1x/base1.png) no-repeat;
+	height: 632px;
+	margin: 50px auto;
+	position: relative;
+	width: 552px;
+}
+
+main.gowar input {
+	border: none;
+	border-radius: 25px;
+	color: #095F48;
+	font-size: 2em;
+	height: 50px;
+	outline: none;
+	position: absolute;
+	top: 100px; left: 80px;
+	text-align: center;
+	width: 400px;
+}
+
+main.gowar figure{
+	height: 180px;
+	margin: 0px;
+	padding: 0px;
+	position: absolute;
+	transition: all 0.5s ease-out;
+	top: 300px;
+	width: 180px;
+
+}
+
+main.gowar figure#female {
+	background: url(../imgs/guerra/1x/mujer1.png) no-repeat;
+	background-size: 200px;
+	left: 80px;
+	top: 230;
+}
+main.gowar figure#female.active {
+	background: url(../imgs/guerra/1x/mujer2.png) no-repeat center;
+}
+
+main.gowar figure#male {
+	background: url(../imgs/guerra/1x/hombre1.png) no-repeat;
+	background-size: 150px;
+	right: 70px;
+	top: 300px;
+
+}
+main.gowar figure#male.active {
+	background: url(../imgs/guerra/1x/hombre2.png) no-repeat center;
+}
+
+main.gowar figure:hover{
+	cursor: pointer;
+	transform: translateY(-10px);
+}
+
+main.gowar button {
+	background: url(../imgs/guerra/1x/calcular1.png) no-repeat;
+	border: none;
+	border-radius: 25px;
+	height: 70px;
+	display: block;
+	position: absolute;
+	bottom: 70px; left: 120px;
+	transition: all 0.5s ease-in;
+	width: 300px;
+}
+
+main.gowar button:hover {
+	background: url(../imgs/guerra/1x/calcular2.png) no-repeat;
+	cursor: pointer;
+	transform: scale(1);
+}

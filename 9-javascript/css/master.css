@@ -1,0 +1,109 @@
+body {
+	font: 16px Arial;
+	color: white;
+}
+h1 {
+	text-align: center;
+	
+}
+main.table {
+	background: url(../imgs/Base.png) no-repeat center;
+	height: 738px;
+	margin: 20px auto;
+	position: relative;
+	width: 480px;
+}
+main.table section.attributes {
+	height: 420px;
+	left: 170px;
+	position: absolute;
+	top: 110px;
+	width: 300px; 
+}
+section.attributes ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px 0px 0px 20px;
+}
+section.attributes ul li {
+	font-size: 1.2em;
+	padding: 21px 0px;
+	margin-bottom: 7px;
+	text-shadow: 0px 0px 0px 12px #fff;
+}
+main.table section.methods {
+	width: 470px;
+	height: 85px;
+	position: absolute;
+	left: 4px;
+	bottom: 17px;
+}
+
+section.methods button {
+	border: none;
+	height: 64px;
+	margin: 13px 14px 0px 12px;
+	transition: all 0.5s ease;
+	width: 64px;
+	border-radius: 100px;
+}
+section.methods button:first-of-type {
+	margin-left: 15px;
+}
+section.methods button:last-of-type {
+	margin-left: 0px;
+}
+section.methods button:hover {
+	cursor: pointer;
+	transform: scale(1.2);
+}
+section.methods button#btnOn {
+	background: transparent url(../imgs/btn-play.png.png) no-repeat center;
+}
+section.methods button#btnOff {
+	background: transparent url(../imgs/btn-off.png.png) no-repeat center;
+}
+section.methods button#btnStop {
+	background: transparent url(../imgs/btn-stop.png.png) no-repeat center;
+}
+section.methods button#btnForward {
+	background: transparent url(../imgs/btn-forward.png.png) no-repeat center;
+}
+section.methods button#btnBackward {
+	background: transparent url(../imgs/btn-backward.png.png) no-repeat center;
+}
+section#path {
+	position: absolute;
+	top: 300px;
+	left: 0px;
+	width: 450px;
+	height: 130px;
+}
+figure#vhc {
+	background: transparent url(../imgs/auto2.png) no-repeat center;
+	background-size: cover;
+	width: 300px;
+	height: 250px;
+	position: relative;
+}
+figure#vhc.on {
+	animation: animOn 0.1ms 1.5s infinite;
+}
+section#path.forward {
+	animation: animForward 4s linear infinite forwards;
+}
+section#path.backward {
+	animation-direction: reverse;
+	/*animation-play-state: running;*/
+}
+section#path.stop {
+	animation-play-state: paused;
+}
+@keyframes animOn {
+	0%, 100% { top: 0px;  }
+	50%      { top: -4px; }
+}
+@keyframes animForward {
+	0%   { left: 0px;    }
+	100% { left: 1200px; }
+}

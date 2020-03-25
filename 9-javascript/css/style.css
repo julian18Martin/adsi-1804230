@@ -1,0 +1,20 @@
+:root {
+	font: 16px Arial;
+}
+body {
+	font-size:  1rem;
+	background-color: #ddd;
+	color: #444;
+}
+main {
+	background-color: #fff;
+	box-shadow: 1px 1px 8px 8px #999;
+	border-radius: 2px;
+	width: 600px;	
+	padding: 20px;	
+	margin: 40px auto;
+}
+h1 {
+	text-align: center;
+	border-bottom: 	1px solid #ddd;
+}

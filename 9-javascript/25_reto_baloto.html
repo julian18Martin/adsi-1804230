@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Reto Aleatorio (Baloto)</title>
+	<style>
+		
+		body {
+			background: url(imgs/baloto/bg_baloto.jpg) no-repeat center;
+			margin: 0px;
+			height: 100vh;
+		}
+		
+		h1 {
+			color: #ee0e0a;
+			text-align: center;
+			font-family: Arial;
+		}
+		img {
+			display: block;
+			margin: 40px auto;
+			width: 250px;
+		}
+		
+		ul.balls{
+			margin: 80px auto;
+			list-style: none;
+			padding: 0;
+			width: 740px;
+		}
+
+		ul.balls li.ball{
+			display: inline-block;
+			margin: 0px 10px;
+			font-size: 3em;
+			text-align: center;
+			line-height: 2em;
+			height: 106px;
+			width: 100px;
+			position: relative;
+			top: -424px;
+			background: url(imgs/baloto/bg_balota1.png) no-repeat center;
+		}
+		ul.balls li.balls{
+			background: url(imgs/baloto/bg_balota2.png);
+		}
+
+		button#btnPlay {
+			display: block;
+			width: 200px;
+			margin: 0px auto;
+			padding: 15px;
+			border-radius: 25px;
+			background-color: #9f0e0a;
+			color: white;
+			transform: all 0.5s ease-in;
+			font-size: 1.2em;
+		}
+		button#btnPlay:hover{
+			color: yellow;
+			cursor: pointer;
+			transform: scale(1.1);
+			background-color: #9f0e0a;
+		}
+
+		ul.balls li.animBall{
+			animation: animBall 1s 1 forwards;
+		}
+		@keyframes animBall{
+			0%	{ top: -424px;}
+			40%	{ top: 0px;   }
+			50%	{ top: -80px; }
+			60%	{ top: 0px;   }
+			70%	{ top: -60px; }
+			80%	{ top: 0px;   }
+			90%	{ top: -40px; }
+			100%{ top: 0px;   }
+		}
+
+	</style>
+</head>
+<body>
+	<main>
+	<h1>Reto Aleatorio (Baloto)</h1>
+	<img src="imgs/baloto/logo_baloto.png" alt="">
+	<br>
+	<ul class="balls">
+		<li class="ball ball1"></li>
+		<li class="ball ball2"></li>
+		<li class="ball ball3"></li>
+		<li class="ball ball4"></li>
+		<li class="ball ball5"></li>
+		<li class="ball balls" id="ballx"></li>
+	</ul>
+	<button id="btnPlay">Jugar</button>
+	</main>
+	
+	
+	<script>
+		//Variables
+		var btnPlay = document.getElementById('btnPlay');
+		var balls = document.getElementsByClassName('ball');
+		var ballx = document.getElementById('ballx');
+		//Eventos
+		btnPlay.onclick = function(){
+			for(var i = 0; i<balls.length; i++){
+				balls[i].classList.remove('animBall');
+				this.setAttribute("disabled","disabled");
+				balls[i].innerHTML = Math.round(Math.random()*(45 - 1)-1);
+				ballx.innerHTML = Math.round(Math.random()*(16 - 1)-1);
+				animAllBalls();
+			}
+		}
+		//Funciones
+		function animAllBalls(){
+			var cont = 0;
+			var sint = setInterval(function(){
+				if(cont < 6){
+					balls[cont].classList.add('animBall');
+
+				}else{
+					btnPlay.removeAttribute('disabled');
+					clearInterval(sint);
+				}
+				cont++;
+			},800);
+		}
+
+	</script>
+</body>
+</html>

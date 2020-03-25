@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Métodos (fecha)</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<main>
+		<h1>Métodos (fecha)</h1>
+		<h4>GET</h4>
+		<ul id="lget"></ul>
+		<h4>SET</h4>
+		<ul id="lset"></ul>
+
+	</main>
+	<script>
+		//Varibles
+		var lget = document.getElementById('lget');
+		var lset = document.getElementById('lset');
+
+		var ndate = new Date();
+		var fdate = new Date('2022/12/31 23:59:59');
+		//Get
+
+		lget.innerHTML = "<li>Fecha Completa: "+ndate+"</li>";
+		lget.innerHTML += "<li>Año: "+ndate.getFullYear()+"</li>";
+		lget.innerHTML += "<li>Mes: "+(ndate.getMonth()+1)+"</li>";
+		lget.innerHTML += "<li>Día: "+ndate.getDay()+"</li>";
+		lget.innerHTML += "<li>Día Mes: "+ndate.getDate()+"</li>";
+		lget.innerHTML += "<li>Hora: "+ndate.getHours()+"</li>";
+		lget.innerHTML += "<li>Minutos: "+ndate.getMinutes()+"</li>";
+		lget.innerHTML += "<li>Segundos: "+ndate.getSeconds()+"</li>";
+
+		//Set
+		
+		lset.innerHTML = "<li>Fecha Completa: "+fdate+"</li>";
+		fdate.setFullYear(2050);
+		fdate.setMonth(12);
+		fdate.setDate(20);
+		lset.innerHTML += "<li>Año: "+fdate.getFullYear(2022)+"</li>";
+		lset.innerHTML += "<li>Mes: "+(fdate.getMonth(12)+1)+"</li>";
+		lset.innerHTML += "<li>Día: "+fdate.getDay(7)+"</li>";
+		lset.innerHTML += "<li>Día Mes: "+fdate.getDate(31)+"</li>";
+	</script>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>slider</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<style>
+		main {
+			width: 1024px;
+		}
+		section.sliders {
+			position: relative;
+			margin: 0px auto;
+			height: 360px;
+			overflow: hidden;
+			width: 1024px;
+		}
+		section.sliders figure {
+			margin: 0px;
+			position: relative;
+		}
+		section.sliders figure img {
+			width: 1024px;
+
+		}
+		section.sliders figure:hover figcaption {
+			bottom: 0px;
+		}
+		section.sliders figure figcaption {
+			background-color: rgba(0, 0, 0, .7);
+			color: rgba(255, 255, 255, .6);
+			height: 100px;
+			padding: 10px;
+			position: absolute;
+			bottom: -120px;
+			transition: all 0.5s ease-in;
+			width: 1004px;
+		}
+		section.sliders figure figcaption h4 {
+			border-bottom: 1px dotted rgba(255, 255, 255, .4);
+			text-align: left;
+			text-transform: uppercase;
+			font-size: 1.5;
+			margin: 0;
+		}
+		section.sliders figure figcaption p {
+			text-align: justify;
+		}
+		section.sliders div.controls {
+			position: absolute;
+			top: 60px;
+			z-index: 99;
+			width: 1024px;
+		}
+		section.sliders div.controls button {
+			border: none;
+			height: 30px;
+			position: absolute;
+			opacity: 0.8;
+			transition: all 0.5 ease-in;
+			background: transparent;
+			width: 40px;
+		}
+		section.sliders div.controls button:hover {
+			cursor: pointer;
+			opacity: 1;
+			transform: scale(1.1);
+		}
+
+		section.sliders div.controls button.btn-prev {
+			background: url(imgs/prev.png)no-repeat center;
+			background-size:contain;
+			left: 10px;
+			top: 110px;
+		}
+		section.sliders div.controls button.btn-next {
+			background: url(imgs/next.png)no-repeat center;
+			background-size:contain;
+			right: 10px;
+			top: 110px;
+		}
+		section.sliders div.dots {
+			position: absolute;
+			top: 10px;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 150px;
+			z-index: 99;
+		}
+		section.sliders div.dots button {
+			border-radius: 100%;
+			background-color: rgba(255, 255, 255, .7);
+			border: 1px solid green;
+			font-weight: bold;
+			height: 24px;
+			width: 24px;
+		}
+		section.sliders div.dots button:hover {
+			cursor: pointer;
+			transform: scale(1.1);
+		}
+		section.sliders div.dots button.active {
+			background-color: rgba(0, 0, 0, .8);
+			color: white;
+		}
+		section.sliders button.btn-play {
+			position: absolute;
+			top: 0px;
+			border-radius: 20px;
+			background-color: rgba(255, 255, 255, .7);
+			font-weight: bold;
+			height: 24px;
+			transition: all 0.2s ease-out;
+			width: 120px;
+			position: absolute;
+			top: 10px;
+			left: 10px;
+		}
+
+		section.sliders button.btn-play:hover{
+			cursor: pointer;
+			transform: scale(1.1);
+		}
+
+
+	</style>
+</head>
+<body>
+	<main>
+		<h1>slider</h1>
+		<section class="sliders">
+			<figure class="slider1 active">
+				<img src="imgs/slider1.png" alt="">
+				<figcaption>
+					<h4>NARUTO</h4>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis nostrum magnam voluptatem ipsam dicta! Quasi ipsum id illo.
+					</p>
+				</figcaption>
+			</figure>
+			<figure class="slider2">
+				<img src="imgs/slider2.png" alt="">
+				<figcaption>
+					<h4>NARUTO</h4>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis nostrum magnam voluptatem ipsam dicta! Quasi ipsum id illo.
+					</p>
+				</figcaption>
+			</figure>
+			<figure class="slider3">
+				<img src="imgs/slider3.png" alt="">
+				<figcaption>
+					<h4>NARUTO</h4>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis nostrum magnam voluptatem ipsam dicta! Quasi ipsum id illo.
+					</p>
+				</figcaption>
+			</figure>
+			<figure class="slider4">
+				<img src="imgs/slider4.png" alt="">
+				<figcaption>
+					<h4>rick and morty</h4>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis nostrum magnam voluptatem ipsam dicta! Quasi ipsum id illo.
+					</p>
+				</figcaption>
+			</figure>
+			<figure class="slider5">
+				<img src="imgs/slider5.png" alt="">
+				<figcaption>
+					<h4>rick and morty</h4>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis nostrum magnam voluptatem ipsam dicta! Quasi ipsum id illo.
+					</p>
+				</figcaption>
+			</figure>
+			<div class="controls">
+				<button class="btn-prev"></button>
+				<button class="btn-next"></button>
+			</div>
+			<div class="dots">
+				<button class="dots1 active">1</button>
+				<button class="dots2">2</button>
+				<button class="dots3">3</button>
+				<button class="dots4">4</button>
+				<button class="dots5">5</button>
+			</div>
+			<button class="btn-play"> &rtrif; AutoPlay</button>
+		</section>
+	</main>
+	<script src="js/jquery-3.4.1.js"></script>
+	<script>
+		$(document).ready(function() {
+			// Variables
+			$numSliders      = $('figure').length; // número de sliders
+			$activeSlider    = $('figure.active'); // Slider activado
+			$numActiveSlider = 1; // número del slider activo
+			// Lógica
+			$('figure').not('.active').hide(); // ocultar todos los sliders menos el activo
+ 
+			// Eventos
+			$('.btn-next').click(function(event) {
+				if($numActiveSlider < $numSliders) {
+					$numActiveSlider++;
+					$activeSlider.hide().removeClass('active');
+					$activeSlider.next().addClass('active').fadeIn(1000);
+				} else {
+					$numActiveSlider = 1;
+					$activeSlider.hide().removeClass('active');
+					$('figure').first().addClass('active').fadeIn(1000);
+				}
+				$activeSlider = $('figure.active');
+				activeNumberSlider();
+			});
+			// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+			$('.btn-prev').click(function(event) {
+				if($numActiveSlider > 1) {
+					$numActiveSlider--;
+					$activeSlider.hide().removeClass('active');
+					$activeSlider.prev().addClass('active').fadeIn(1000);
+				} else {
+					$numActiveSlider = 5;
+					$activeSlider.hide().removeClass('active');
+					$('figure').last().addClass('active').fadeIn(1000);
+				}
+				$activeSlider = $('figure.active');
+				activeNumberSlider();
+			});
+			// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+			$('div.dots button').click(function(event) {
+				$('div.dots button').removeClass('active');
+				$(this).addClass('active');
+				$numActiveSlider = parseInt($(this).text());
+				$activeSlider.hide().removeClass('active');
+				$('figure').eq($numActiveSlider-1)
+						   .addClass('active').fadeIn(1000);
+				$activeSlider = $('figure.active');
+			});
+			// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+			$('.btn-play').click(function(event) {
+				$(this).toggleClass('autoplay');
+				if($(this).hasClass('autoplay')) {
+					$(this).html('&FilledSmallSquare; Stop');
+					$intsliders = setInterval(function() {
+					if($numActiveSlider < $numSliders) {
+						$numActiveSlider++;
+						$activeSlider.hide().removeClass('active');
+						$activeSlider.next().addClass('active').fadeIn(1000);
+					} else {
+						$numActiveSlider = 1;
+						$activeSlider.hide().removeClass('active');
+						$('figure').first().addClass('active').fadeIn(1000);
+					}
+					$activeSlider = $('figure.active');
+					activeNumberSlider();
+					}, 3000);
+				} else {
+					$(this).html('&rtrif; AutoPlay');
+					clearInterval($intsliders);
+				}
+			});
+			// Funciones
+			function activeNumberSlider() {
+				$('div.dots button').removeClass('active');
+				$('div.dots button').each(function(index, el) {
+					if($numActiveSlider == index+1) {
+						$(el).addClass('active');
+					}
+				});
+			}
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Selectores jQuery</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<style>
+		button {
+			cursor: pointer;
+		}
+		
+
+
+	</style>
+</head>
+<body>
+	<main>
+		<h1>Selectores jQuery</h1>
+		<button> Contar:  </button>
+	</main>
+	
+
+	<script src="js/jquery-3.4.1.js"></script>
+
+	<script>
+		$(function() {
+			$ (cont = 0);
+			$('button').click(function(event) {
+				$(this).text('Contar:'+cont++);
+			});
+		});
+
+	</script>
+</body>
+</html>
